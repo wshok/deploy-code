@@ -1,4 +1,4 @@
-# deployphpcode
+# deploycode
 代码发布工具：web部署系统工具，配置简单、免安装、开箱即用。发布过程可视化，支持git版本管理，根据tag版本 增量发布，支持PHP，Python等各种web代码，一键发布。
 
 ### 功能特色
