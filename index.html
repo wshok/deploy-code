@@ -1,0 +1,197 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+
+    <title></title>
+  </head>
+  <body>
+    <h1></h1>
+    <div class="container">
+      <div class="row clearfix">&nbsp;</div>
+      <div class="row clearfix">&nbsp;</div>
+      <div class="row clearfix">
+        <div class="col-md-2 column"></div>
+        <div class="col-md-8 column"><h3>发布工具</h3></div>
+        <div class="col-md-2 column">
+          <a href="/setting" style="color:#212529;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gear" viewBox="0 0 16 16">
+            <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z"/>
+            <path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52l-.094-.319zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115l.094-.319z"/>
+          </svg>
+          </a>
+        </div>
+      </div>
+      <div class="row clearfix">&nbsp;</div>
+      <div class="row clearfix">
+        <div class="col-md-2 column"></div>
+        <div class="col-md-8 column">
+          <form class="form-horizontal" role="form" onsubmit="return false;">
+            <div class="form-group row">
+              <label for="inputProject" class="col-sm-2 control-label">项目</label>
+              <div class="col-sm-6">
+                <select class="form-control" id="inputProject" required></select>
+              </div>
+            </div>
+            <div class="form-group row">
+               <label for="inputVer" class="col-sm-2 control-label">版本</label>
+              <div class="col-sm-6">
+                <input type="text" class="form-control" id="inputVer" required />
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-sm-8">
+                 <button type="submit" class="btn btn-primary">发布</button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="col-md-2 column"></div>
+      </div>
+
+      <div class="row clearfix">
+        <div class="col-md-3 column"></div>
+        <div class="col-md-6 column">
+          <div class="row clearfix">
+          <div class="col-md-12 column deploy-response" style="display:none;">
+            <ol>
+              <li> 拉取 -------- <span class="step1" style="color:gray;">等待</span></li>
+              <li> 打包 -------- <span class="step2" style="color:gray;">等待</span></li>
+              <li> 推送 -------- <span class="step3" style="color:gray;">等待</span></li>
+              <li> 解压 -------- <span class="step4" style="color:gray;">等待</span></li>
+              <li> 发布 -------- <span class="step5" style="color:gray;">等待</span></li>
+            </ol>
+          </div>
+        </div>
+        </div>
+        <div class="col-md-3 column"></div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="text/javascript">
+      $(function(){
+        axios.get('/projects')
+        .then(function (response) {
+          if (response.data) {
+            let projects = response.data.split(',');
+            let html = '<option></option>';
+            for(var i=0;i<projects.length;i++) {
+              html += '<option value="'+projects[i]+'">'+projects[i]+'</option>';
+            }
+            $('#inputProject').html(html);
+          }
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+
+
+        $('button[type=submit]').click(function(){
+
+          let project = $('#inputProject').val();
+          let ver = $('#inputVer').val();
+          if (project == '' || ver == '') {
+            return;
+          }
+
+          $(this).attr("disabled",true);
+          $('.deploy-response').css('display', '');
+
+          axios.post('/pull', {
+            project: project,
+            ver: ver
+          })
+          .then(function (response) {
+            let data = eval('(' + response.data + ')');
+            if (data.code == 0) {
+              $('.step1').text('失败: '+data.msg)
+              $('.step1').css('color', 'red');
+              $(this).attr("disabled",false);
+              return;  
+            } else {
+              $('.step1').text('成功')
+              $('.step1').css('color', 'green');
+            }
+            
+            axios.post('/zip', {
+              project: project,
+              ver: ver
+            })
+            .then(function (response) {
+              let data = eval('(' + response.data + ')');
+              if (data.code == 0) {
+                $('.step2').text('失败: '+data.msg)
+                $('.step2').css('color', 'red');
+                $(this).attr("disabled",false);
+                return;  
+              } else {
+                $('.step2').text('成功')
+                $('.step2').css('color', 'green');
+              }
+
+              axios.post('/push', {
+                project: project,
+                ver: ver
+              })
+              .then(function (response) {
+                let data = eval('(' + response.data + ')');
+                if (data.code == 0) {
+                  $('.step3').text('失败: '+data.msg)
+                  $('.step3').css('color', 'red');
+                  $(this).attr("disabled",false);
+                  return;  
+                } else {
+                  $('.step3').text('成功')
+                  $('.step3').css('color', 'green');
+                }
+
+                axios.post('/unzip', {
+                  project: project,
+                  ver: ver
+                })
+                .then(function (response) {
+                  let data = eval('(' + response.data + ')');
+                  if (data.code == 0) {
+                    $('.step4').text('失败: '+data.msg)
+                    $('.step4').css('color', 'red');
+                    $(this).attr("disabled",false);
+                    return;  
+                  } else {
+                    $('.step4').text('成功')
+                    $('.step4').css('color', 'green');
+                    $('.step5').text('完成')
+                    $('.step5').css('color', 'green');
+                  }
+                })
+                .catch(function (error) {
+                  console.log(error);
+                  $(this).attr("disabled",false);
+                });
+              })
+              .catch(function (error) {
+                console.log(error);
+                $(this).attr("disabled",false);
+              });
+            })
+            .catch(function (error) {
+              console.log(error);
+              $(this).attr("disabled",false);
+            });
+          })
+          .catch(function (error) {
+            console.log(error);
+            $(this).attr("disabled",false);
+          });
+        });
+      });
+      
+    </script>
+  </body>
+</html>

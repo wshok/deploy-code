@@ -1,0 +1,165 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+
+    <title></title>
+  </head>
+  <body>
+    <h1></h1>
+    <div class="container">
+      <div class="row clearfix">&nbsp;</div>
+      <div class="row clearfix">&nbsp;</div>
+      <div class="row clearfix">
+        <div class="col-md-2 column"></div>
+        <div class="col-md-10 column"><h3>配置</h3></div>
+      </div>
+      <div class="row clearfix">&nbsp;</div>
+      <div class="row clearfix">
+        <div class="col-md-2 column"></div>
+        <div class="col-md-10 column">
+          <form class="form-horizontal" role="form" onsubmit="return false;">
+            <div class="form-group row">
+              <label for="inputRepo" class="col-sm-2 control-label">git地址</label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control" id="inputRepo" aria-describedby="repoHelpInline" value="${repo}" required />
+                <small id="repoHelpInline" class="text-muted">
+                  项目名用%s占位符代替
+                </small>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="inputBranch" class="col-sm-2 control-label">git分支</label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control" id="inputBranch" value="${branch}" required />
+              </div>
+            </div>
+
+            <div class="mx-auto border-top" style="width: 100%;">&nbsp;</div>
+
+            <div class="form-group row">
+              <label for="inputHost" class="col-sm-2 control-label">ssh-host</label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control" id="inputHost" value="${host}" required />
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="inputUser" class="col-sm-2 control-label">ssh-user</label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control" id="inputUser" value="${user}" required />
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="inputKey" class="col-sm-2 control-label">ssh-key</label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control" id="inputKey" value="${key}" required />
+                <small class="text-muted">
+                  ssh 私钥所在的路径
+                </small>
+              </div>
+            </div>
+
+            <div class="mx-auto border-top" style="width: 100%;">&nbsp;</div>
+
+            <div class="form-group row">
+               <label for="inputProjects" class="col-sm-2 control-label">项目</label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control" id="inputProjects" value="${projects}" aria-describedby="projectsHelpInline" required />
+                <small id="projectsHelpInline" class="text-muted">
+                  支持哪些项目发布，多个用,分隔
+                </small>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="inputRelease" class="col-sm-2 control-label">发布目录</label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control" id="inputRelease" value="${release_path}" aria-describedby="releaseHelpInline" required />
+                <small id="releaseHelpInline" class="text-muted">
+                  生产服务器上的代码发布目录
+                </small>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <div class="col-sm-10">
+                 <button type="submit" class="btn btn-primary">保存</button>
+                 &nbsp;&nbsp;
+                 <button type="cancel" class="btn btn-secondary" onclick="javascript:location.href='/';">返回</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">提示</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">保存成功</div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="text/javascript">
+      $$(function(){
+
+        $$('button[type=submit]').click(function(){
+
+          let repo = $$('#inputRepo').val();
+          let branch = $$('#inputBranch').val();
+          let host = $$('#inputHost').val();
+          let user = $$('#inputUser').val();
+          let key = $$('#inputKey').val();
+          let release = $$('#inputRelease').val();
+          let projects = $$('#inputProjects').val();
+
+          if (repo == '' || branch == '' || host =='' || user=='' || key=='' ||release =='' || projects=='') {
+            return;
+          }
+
+          $$(this).attr("disabled",true);
+
+          axios.post('/setting', {
+            projects: projects,
+            repo:repo,
+            branch:branch,
+            host:host,
+            user:user,
+            key:key,
+            release_path:release
+          })
+          .then(function (response) {
+            $$('button[type=submit]').attr("disabled",false);
+            $$('#exampleModal').modal('show');
+          })
+          .catch(function (error) {
+            console.log(error);
+            $$('button[type=submit]').attr("disabled",false);
+          });
+        });
+      });
+      
+    </script>
+  </body>
+</html>
