@@ -61,6 +61,8 @@
             <div class="form-group row">
               <div class="col-sm-8">
                  <button type="submit" class="btn btn-primary">发布</button>
+                 &nbsp;&nbsp;
+                 <button type="reset" class="btn btn-secondary">取消</button>
               </div>
             </div>
           </form>
@@ -106,6 +108,11 @@
         });
 
 
+        $('button[type=reset]').click(function(){
+          $('.deploy-response').css('display', 'none');
+        });
+
+
         $('button[type=submit]').click(function(){
 
           let project = $('#inputProject').val();
@@ -114,7 +121,7 @@
             return;
           }
 
-          $(this).attr("disabled",true);
+          $('button[type=submit]').attr("disabled",true);
           $('.deploy-response').css('display', '');
 
           axios.post('/pull', {
@@ -126,7 +133,7 @@
             if (data.code == 0) {
               $('.step1').text('失败: '+data.msg)
               $('.step1').css('color', 'red');
-              $(this).attr("disabled",false);
+              $('button[type=submit]').attr("disabled",false);
               return;  
             } else {
               $('.step1').text('成功')
@@ -142,7 +149,7 @@
               if (data.code == 0) {
                 $('.step2').text('失败: '+data.msg)
                 $('.step2').css('color', 'red');
-                $(this).attr("disabled",false);
+                $('button[type=submit]').attr("disabled",false);
                 return;  
               } else {
                 $('.step2').text('成功')
@@ -158,7 +165,7 @@
                 if (data.code == 0) {
                   $('.step3').text('失败: '+data.msg)
                   $('.step3').css('color', 'red');
-                  $(this).attr("disabled",false);
+                  $('button[type=submit]').attr("disabled",false);
                   return;  
                 } else {
                   $('.step3').text('成功')
@@ -174,7 +181,7 @@
                   if (data.code == 0) {
                     $('.step4').text('失败: '+data.msg)
                     $('.step4').css('color', 'red');
-                    $(this).attr("disabled",false);
+                    $('button[type=submit]').attr("disabled",false);
                     return;  
                   } else {
                     $('.step4').text('成功')
@@ -185,22 +192,22 @@
                 })
                 .catch(function (error) {
                   console.log(error);
-                  $(this).attr("disabled",false);
+                  $('button[type=submit]').attr("disabled",false);
                 });
               })
               .catch(function (error) {
                 console.log(error);
-                $(this).attr("disabled",false);
+                $('button[type=submit]').attr("disabled",false);
               });
             })
             .catch(function (error) {
               console.log(error);
-              $(this).attr("disabled",false);
+              $('button[type=submit]').attr("disabled",false);
             });
           })
           .catch(function (error) {
             console.log(error);
-            $(this).attr("disabled",false);
+            $('button[type=submit]').attr("disabled",false);
           });
         });
       });
