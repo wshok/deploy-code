@@ -275,6 +275,10 @@ class WebHandler(BaseHTTPRequestHandler):
         result = ''
         if paths == '/favicon.ico':
             self.wfile.write(bytes(''))
+        elif paths == '/bg.jpg':
+            f = open('bg.jpg', 'r')
+            result = f.read()
+            f.close()
         elif paths == '/projects':
             result = WebHandler.p.projects()
         elif paths == '/setting':
@@ -287,7 +291,6 @@ class WebHandler(BaseHTTPRequestHandler):
 
             tempTemplate  = Template(result)
             result = tempTemplate.substitute(setting)
-
         else:
             f = open('index.html', 'r')
             result = f.read()
