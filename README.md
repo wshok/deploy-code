@@ -1,5 +1,5 @@
-# deploy-code
-deploy code：代码发布工具，python2 + web版，基于git + tag版本号增量发布。
+### web版代码发布工具
+python2实现，基于git + tag版本号发布代码。
 
 ### 功能特色
 1. 配置化 （包括：git仓库、分支，服务器ip、目录、ssh账号）。
