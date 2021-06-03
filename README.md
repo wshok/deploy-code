@@ -1,13 +1,14 @@
-### web版代码发布工具
-python2实现，基于git + tag版本号发布代码。
+### php代码发布工具
+python2版本，基于git + tag版本号发布。
 
 ### 功能特色
 1. 配置化 （包括：git仓库、分支，服务器ip、目录、ssh账号）。
-2. 发布过程可视化，有步骤进度展示，显示每个步骤的成功失败状态。
+2. web界面操作，发布步骤进度展示，显示每个步骤的成功失败状态。
 3. 增量发布，只发布有修改变动的文件，加快发布效率。
-4. 使用简单、操作便捷，无需安装，修改好配置 即可投入使用，一键操作发布。
-5. 实战检验，经过多个项目 频繁的日常发布使用验证，从内网发布到aliyun/aws等。
 
+### 安装使用
+1. 下载后运行 python main.py 即可，依赖包可自行安装 pip install xxxx。
+2. 默认监听8000端口， 可自行修改。
 
 ### 截图
 ![Image text](https://raw.githubusercontent.com/wshok/deploy-code/main/screenshot/setting.png)
